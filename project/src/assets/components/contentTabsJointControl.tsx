@@ -14,7 +14,7 @@ export default function JointControlsContent({ onRef }: JointControlsContentProp
         { name: 'elbow', value: 0, max: 180 },
         { name: 'wrist_v', value: 180, max: 180 },
         { name: 'wrist_r', value: 90, max: 180 },
-        { name: 'gripper', value: 45, max: 90 },
+        { name: 'gripper', value: 45, max: 150 },
     ];
 
     const [joints, setJoints] = useState(initialJointsConfig);
@@ -65,7 +65,7 @@ export default function JointControlsContent({ onRef }: JointControlsContentProp
 
         const data = {
             joint: name,
-            angle: name === "gripper" ? 90 - value : value,
+            angle: name === "gripper" ? 150 - value : value,
         };
 
         try {
